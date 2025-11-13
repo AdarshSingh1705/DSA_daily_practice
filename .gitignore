@@ -1,0 +1,12 @@
+# Ignore executable files
+*.exe
+
+# Ignore Competitive Programming Helper files
+.cph/
+
+# Ignore VSCode settings folder
+.vscode/
+
+.college in C/
+.C++/
+.S_T_L/
