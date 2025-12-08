@@ -7,6 +7,8 @@
 # Ignore VSCode settings folder
 .vscode/
 
-.college in C/
-.C++/
-.S_T_L/
+# Ignore specific project folders
+college in C/
+C++/
+S_T_L/
+Questions/
