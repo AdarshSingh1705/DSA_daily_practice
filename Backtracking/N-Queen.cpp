@@ -2,7 +2,6 @@
 The n queen puzzle is the problem of placing N class queens on an N*N chessboard such that no two queens attack each other.
 Given an integer 'N' print all distinct solutions to the N queen puzzle
 Two queen on the same chess baord can attack other if any of the below condition satifies:
-.
 1. They share a row.
 2. they share a column
 3. They share a diagonal
@@ -90,7 +89,6 @@ int main() {
     cout << "Total solutions: " << ans.size() << "\n";
     return 0;
 }
- 
 
 //// =============================================================
 // ===========More robust and proper oops=====================
