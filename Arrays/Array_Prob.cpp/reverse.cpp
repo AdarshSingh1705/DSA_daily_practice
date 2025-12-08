@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include<iostream>
 #include<vector>
 using namespace std;
@@ -40,4 +41,13 @@ int main(){
    print(arr, n);
 
    return 0;
+=======
+#include<iostream>
+#include<vector>
+using namespace std;
+
+
+int main(){
+   
+>>>>>>> 0aeb97f3a68c61b23cdc45085f5163f4cadaef77
 }
