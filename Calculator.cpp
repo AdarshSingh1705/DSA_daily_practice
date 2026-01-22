@@ -22,7 +22,7 @@ int main(){
     cin >> n ;
     cout<< endl;
     if( n == 0){
-        cout << "can't possible to calculate avcrage of null numbers"<< endl;
+        cout << "Not possible to calculate average of null numbers"<< endl;
         return 0;
     }
     int *arr = new int[n];
