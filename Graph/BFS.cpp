@@ -9,60 +9,59 @@ class Graph{
     vector< vector<int>> adjlist;
 
 public:
-        Graph(int vertices, bool isdirected = false) 
+    Graph(int vertices, bool isdirected = false) 
             : V(vertices), directed(isdirected), adjlist(vertices){}
 
-        void addEdges(int u, int v){
-            if(u < 0 || v < 0 || u >= V || v >= V){
-                cerr << "Invalid edge: " << u << " " << v << endl;
-                return;
-            }
-
-            adjlist[u].push_back(v);
-
-            if(!directed){
-                adjlist[v].push_back(u);
-            }
+    void addEdges(int u, int v){
+        if(u < 0 || v < 0 || u >= V || v >= V){
+            cerr << "Invalid edge: " << u << " " << v << endl;
+            return;
         }
 
-        void BFS(int start){
-            if(start < 0 || start >= V){
-                cerr << "Invalid BFS start node: " << start << endl;
-                return;
-            }
+        adjlist[u].push_back(v);
 
-            vector<bool> visited(V, false);
-            queue<int> q;
+        if(!directed){
+            adjlist[v].push_back(u);
+        }
+    }
 
-            visited[start] = true;
-            q.push(start);
+    void BFS(int start){
+        if(start < 0 || start >= V){
+            cerr << "Invalid BFS start node: " << start << endl;
+            return;
+        }
 
-            cout << "BFS Traversal: ";
-            while(!q.empty()){
-                int node = q.front();
-                q.pop();
-                cout << node << " ";
+        vector<bool> visited(V, false);
+        queue<int> q;
 
-                for(int neighbour : adjlist[node]){
-                    if(!visited[neighbour]){
-                        visited[neighbour] = true;
-                        q.push(neighbour);
-                    }
+        visited[start] = true;
+        q.push(start);
+
+        cout << "BFS Traversal: ";
+        while(!q.empty()){
+            int node = q.front();
+            q.pop();
+            cout << node << " ";
+
+            for(int neighbour : adjlist[node]){
+                if(!visited[neighbour]){
+                    visited[neighbour] = true;
+                    q.push(neighbour);
                 }
             }
+        }
+        cout << endl;
+    }
 
+    void printGraph(){
+        for(int i=0; i<V; i++){
+            cout << i << " ->";
+            for(int neighbour: adjlist[i]){
+                cout << neighbour << ", ";
+            }
             cout << endl;
         }
-
-        void printGraph(){
-            for(int i=0; i<V; i++){
-                cout << i << " ->";
-                for(int neighbour: adjlist[i]){
-                    cout << neighbour << ", ";
-                }
-                cout << endl;
-            }
-        }
+    }
 };
 
 int main(){

@@ -38,8 +38,8 @@ vector<int> dijkstra(vector<vector<int>> &vec, int vertices, int edges, int sour
         }
         dist[neighbourNode] = nodeDistance + neighbourNodeWeight;
         st.insert({dist[neighbourNode], neighbourNode});
+      }
     }
-  }
   }
   return dist;
 }
